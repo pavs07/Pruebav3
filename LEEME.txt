@@ -1,0 +1,76 @@
+Prueba de Diagnóstico v3 : Formulario de productos
+
+Descripción
+
+Este proyecto consiste en un Sistema de Registro de Productos.
+El sistema permite registrar productos, validar los datos del formulario
+y guardarlos en una base de datos PostgreSQL mediante una conexión PHP.
+
+
+Tecnologías utilizadas
+
+- HTML: estructura de la interfaz
+- CSS: estilos sin frameworks
+- JavaScript: validaciones y manejo dinámico de campos
+- AJAX: envío de datos al servidor
+- PHP: conexión y procesamiento con la base de datos
+- PostgreSQL: almacenamiento de los datos
+
+
+Requisitos previos
+
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
+
+1. PHP 8.0 o superior (la que yo utilice fue la  8.2.12)
+2. PostgreSQL 14 o superior(Activar la extensión de PostgreSQL , quitar ";" a estas 2 líneas ";extension=pdo_pgsql" y ";extension=pgsql")
+3. PgAdmin 4
+4. Servidor local (XAMPP, WAMP o similar)
+5. Navegador actualizado (Chrome, Firefox, Edge, etc.)
+
+
+Pasos para instalar y ejecutar
+
+
+1. Clonar o descargar el repositorio desde GitHub: git clone https://github.com/pavs07/Pruebav3.git
+
+2. Copiar el proyecto al servidor local. Ejemplo (XAMPP): C:\xampp\htdocs\Pruebav3
+
+3. Iniciar los servicios Apache y PostgreSQL** desde el panel de XAMPP.
+ 
+4. Restaurar la base de datos en pgAdmin 4:
+   - Abre pgAdmin 4
+   - Crea una base de datos vacía llamada: pruebav3
+   - Abre el menú Tools y selecciona Query Tool
+   - Haz clic en el ícono de carpeta y selecciona: database/pruebav3.sql`
+   - Presiona F5 para ejecutar
+Esto creará automáticamente las tablas:
+   - bodega
+   - sucursales
+   - moneda
+   - producto
+
+   Además insertará los datos iniciales para bodegas, monedas y sucursales.
+   La tabla producto quedará vacía para insertar registros desde el sistema.
+
+5. Configurar la conexión a la base de datos en conexion.php:
+
+   <?php
+   $conexion = pg_connect("host=localhost dbname=pruebav3 user=postgres password=tu_clave");
+   if (!$conexion) {
+       die("Error de conexión: " . pg_last_error());
+   }
+   ?>
+
+6. Abrir el proyecto en el navegador:
+   http://localhost/Pruebav3/index.php
+
+
+Comentarios finales
+
+-Si al ejecutar ves un error de conexión, revisa el usuario y contraseña de PostgreSQL.
+
+-Si las tablas no se crean, asegúrate de ejecutar el archivo pruebav3.sql en el Query Tool correcto.
+
+-Puedes verificar la conexión probando directamente en tu navegador: http://localhost/Pruebav3/conexion.php
+
+-Si aparece el mensaje “Conexión exitosa a PostgreSQL”, todo está correcto.
