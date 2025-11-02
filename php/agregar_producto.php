@@ -12,8 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sucursal_id = $_POST["sucursal"];
 
     try {
-        $pdo = new PDO("pgsql:host=localhost;dbname=inventario", "postgres", "pablito123");
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Verificar si el código ya existe
         $check = $pdo->prepare("SELECT COUNT(*) FROM producto WHERE codigo = :codigo");
