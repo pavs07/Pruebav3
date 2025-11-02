@@ -81,7 +81,7 @@ fieldset {
   color: #e74c3c;
   font-size: 14px;
   margin-top: 4px;
-  min-height: 18px; /* mantiene espacio aunque no haya error */
+  min-height: 18px;
 }
 /*estilo del resultado*/
 #resultado {

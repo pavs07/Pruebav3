@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmtBodega = $pdo->prepare("SELECT nombre FROM bodega WHERE id = :id");
         $stmtBodega->execute([':id' => $bodega_id]);
         $nombreBodega = $stmtBodega->fetchColumn();
-
         $stmtSucursal = $pdo->prepare("SELECT nombre FROM sucursales WHERE id = :id");
         $stmtSucursal->execute([':id' => $sucursal_id]);
         $nombreSucursal = $stmtSucursal->fetchColumn();

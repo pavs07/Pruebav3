@@ -192,16 +192,15 @@ function enviarProducto() {
     });
 }
 
-//Cargar bodegas y sucursales
+// Cargar bodegas y sucursales
 function cargarBodegas() {
   const bodegaSelect = document.getElementById("bodega");
   const sucursalSelect = document.getElementById("sucursal");
 
-  fetch("php/obtener_bodegas.php")
+  fetch("php/obtener_datos.php?accion=bodegas")
     .then((res) => res.json())
     .then((data) => {
       if (data.error) return alert("Error al cargar bodegas: " + data.error);
-
       data.forEach((b) => {
         bodegaSelect.innerHTML += `<option value="${b.id}">${b.nombre}</option>`;
       });
@@ -213,12 +212,11 @@ function cargarBodegas() {
     sucursalSelect.innerHTML = '<option value="">--</option>';
     if (!id) return;
 
-    fetch(`php/obtener_sucursales.php?bodega_id=${id}`)
+    fetch(`php/obtener_datos.php?accion=sucursales&bodega_id=${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.error)
           return alert("Error al cargar sucursales: " + data.error);
-
         data.forEach((s) => {
           sucursalSelect.innerHTML += `<option value="${s.id}">${s.sucursal}</option>`;
         });
@@ -227,19 +225,17 @@ function cargarBodegas() {
   });
 }
 
-//Cargar monedas
+// Cargar monedas
 function cargarMonedas() {
   const monedaSelect = document.getElementById("moneda");
 
-  fetch("php/obtener_moneda.php")
+  fetch("php/obtener_datos.php?accion=monedas")
     .then((res) => res.json())
     .then((data) => {
       if (data.error) return alert("Error al cargar monedas: " + data.error);
-
-      data.forEach(
-        (m) =>
-          (monedaSelect.innerHTML += `<option value="${m.codigo}">${m.codigo}</option>`)
-      );
+      data.forEach((m) => {
+        monedaSelect.innerHTML += `<option value="${m.codigo}">${m.codigo}</option>`;
+      });
     })
     .catch(() => alert("No se pudo cargar la moneda."));
 }

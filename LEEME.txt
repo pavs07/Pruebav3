@@ -17,6 +17,14 @@ Tecnologías utilizadas
 - PostgreSQL: almacenamiento de los datos
 
 
+Archivos del proyecto Pruebav3
+
+index.php : Pagina del Formulario
+css/estilos.css : Estilo de los errores y formulario
+php/agregar_productos.php : Envios por AJAX a base de datos
+php/obtener_datos.php : Obtener datos de la bodega, sucursales y moneda para su uso en el formulario
+php/conexion.php : Conexion a la base de datos
+
 Requisitos previos
 
 Antes de ejecutar el proyecto, asegúrate de tener instalado:
