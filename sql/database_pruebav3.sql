@@ -34,8 +34,7 @@ CREATE TABLE sucursales (
 
 -- Tabla: producto
 CREATE TABLE producto (
-    id SERIAL PRIMARY KEY,
-    codigo VARCHAR(50) UNIQUE NOT NULL,
+    codigo VARCHAR(50) PRIMARY KEY NOT NULL,
     nombre VARCHAR(100) NOT NULL,
     precio NUMERIC(10,2) NOT NULL,
     moneda VARCHAR(50),
