@@ -6,8 +6,8 @@
 
 
 -- 1️ Crear base de datos (solo si no existe)
-CREATE DATABASE pruebav3;
-\c pruebav3;
+--CREATE DATABASE pruebav3;
+--\c pruebav3;
 
 
 -- 2️ CREACIÓN DE TABLAS
@@ -56,9 +56,7 @@ INSERT INTO bodega (nombre) VALUES
 
 -- Datos: moneda
 INSERT INTO moneda (codigo) VALUES
-('USD'),
-('CLP'),
-('ARS');
+('USD');
 
 -- Datos: sucursales
 INSERT INTO sucursales (id_bodega, nombre) VALUES

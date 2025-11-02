@@ -22,7 +22,7 @@
 
         <div>
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre"  />
+          <input type="text" id="nombre" name="nombre" maxlength="50" />
           <span id="error-nombre" class="error"></span>
         </div>
       </div>

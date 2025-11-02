@@ -24,15 +24,16 @@ css/estilos.css : Estilo de los errores y formulario
 php/agregar_productos.php : Envios por AJAX a base de datos
 php/obtener_datos.php : Obtener datos de la bodega, sucursales y moneda para su uso en el formulario
 php/conexion.php : Conexion a la base de datos
+sql/database_pruebav3.sql: script sql para la creacion de la base de datos
 
 Requisitos previos
 
 Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
 1. PHP 8.0 o superior (la que yo utilice fue la  8.2.12)
-2. PostgreSQL 14 o superior(Activar la extensión de PostgreSQL , quitar ";" a estas 2 líneas ";extension=pdo_pgsql" y ";extension=pgsql")
+2. PostgreSQL 14 o superior(Activar la extensión de PostgreSQL en el archivo php.ini , quitar ";" a estas 2 líneas ";extension=pdo_pgsql" y ";extension=pgsql")
 3. PgAdmin 4
-4. Servidor local (XAMPP, WAMP o similar)
+4. Servidor local (XAMPP)
 5. Navegador actualizado (Chrome, Firefox, Edge, etc.)
 
 
@@ -43,7 +44,7 @@ Pasos para instalar y ejecutar
 
 2. Copiar el proyecto al servidor local. Ejemplo (XAMPP): C:\xampp\htdocs\Pruebav3
 
-3. Iniciar los servicios Apache y PostgreSQL** desde el panel de XAMPP.
+3. Iniciar los servicios Apache y PostgreSQL desde el panel de XAMPP.
  
 4. Restaurar la base de datos en pgAdmin 4:
    - Abre pgAdmin 4
@@ -77,8 +78,4 @@ Comentarios finales
 
 -Si al ejecutar ves un error de conexión, revisa el usuario y contraseña de PostgreSQL.
 
--Si las tablas no se crean, asegúrate de ejecutar el archivo pruebav3.sql en el Query Tool correcto.
-
--Puedes verificar la conexión probando directamente en tu navegador: http://localhost/Pruebav3/conexion.php
-
--Si aparece el mensaje “Conexión exitosa a PostgreSQL”, todo está correcto.
+-Si las tablas no se crean, asegúrate de ejecutar el archivo database_pruebav3.sql en el Query Tool correcto.

@@ -79,10 +79,7 @@ function validarFormulario() {
   }
 
   //Validar Materiales
-  if (
-    materialesSeleccionados.length < 2 ||
-    materialesSeleccionados.length > 2
-  ) {
+  if (materialesSeleccionados.length < 2) {
     mostrarError(
       "materiales",
       "Debe seleccionar al menos dos materiales para el producto."
